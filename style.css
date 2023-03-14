@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato';
+}
+
+@font-face {
+    font-family: 'Mortal Wave';
+    src: url('MortalWave.woff2') format('woff2'),
+        url('MortalWave.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mortal Wave';
+    src: url('MortalWave.woff2') format('woff2'),
+        url('MortalWave.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+body {
+    background-color: rgb(71, 3, 135);
+}
+
+.container .header {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(85, 15, 151);
+}
+
+.container .header input {
+    padding: .8rem 1.5rem;
+    border-radius: 25px;
+    border: 2px solid rgb(50, 2, 95);
+    font-size: 1.2rem;
+    color: #FFF;
+    background-color: rgb(85, 15, 151);
+    outline: none;
+    width: 400px;
+}
+
+.container .movies-container {
+    padding: 2rem;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    justify-content: center;
+    background-color: rgb(108, 19, 191);
+    grid-gap: 20px;
+}
+
+.container .movies-container .movie {
+    height: 500px;
+    background-image: url('m.jpg');
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.container .movie:hover .overview-container {
+    bottom: 0;
+    
+}
+
+.movies-container .movie .title-movie {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(85, 15, 151);
+    color: #FFF;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.movie .title-movie .rate {
+    padding: .5rem;
+    background-color: rgb(50, 2, 95);
+    color: greenyellow;
+}
+
+.movies-container .movie .overview-container {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    background-color: #FFF;
+    padding: 1.5rem .8rem;
+    bottom: -100%;
+    transition: all .4s;
+}
+
+.overview-container .overview-title {
+    margin: 1rem 0;
+}
+
+.empty-result {
+    font-size: 3rem;
+    color: #FFF;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    z-index: 10;
+    display: none;
+}
