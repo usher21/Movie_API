@@ -50,7 +50,7 @@ body {
     padding: 2rem;
     height: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 300px);
+    grid-template-columns: repeat(auto-fill, 350px);
     justify-content: center;
     background-color: rgb(108, 19, 191);
     grid-gap: 20px;
@@ -58,15 +58,14 @@ body {
 
 .container .movies-container .movie {
     height: 500px;
-    background-image: url('m.jpg');
     background-size: cover;
     position: relative;
     overflow: hidden;
+    background-position: center;
 }
 
 .container .movie:hover .overview-container {
     bottom: 0;
-    
 }
 
 .movies-container .movie .title-movie {
@@ -94,6 +93,7 @@ body {
     padding: 1.5rem .8rem;
     bottom: -100%;
     transition: all .4s;
+    color: #414141;
 }
 
 .overview-container .overview-title {
