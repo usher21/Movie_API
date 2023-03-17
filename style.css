@@ -2,29 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lato';
 }
-
-@font-face {
-    font-family: 'Mortal Wave';
-    src: url('MortalWave.woff2') format('woff2'),
-        url('MortalWave.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Mortal Wave';
-    src: url('MortalWave.woff2') format('woff2'),
-        url('MortalWave.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
 
 body {
+    font-family: 'Lato', sans-serif;
     background-color: rgb(71, 3, 135);
 }
 
@@ -50,7 +31,7 @@ body {
     padding: 2rem;
     height: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 350px);
+    grid-template-columns: repeat(auto-fill, 300px);
     justify-content: center;
     background-color: rgb(108, 19, 191);
     grid-gap: 20px;
@@ -62,6 +43,26 @@ body {
     position: relative;
     overflow: hidden;
     background-position: center;
+    background-color: #ccc;
+}
+
+.loading::before {
+    content: '';
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    background-image: linear-gradient(to left, transparent, #a8a7a7, transparent);
+    animation: loading 1s infinite;
+}
+
+@keyframes loading {
+    to {
+        transform: translateX(100%);
+    }
 }
 
 .container .movie:hover .overview-container {
@@ -83,13 +84,14 @@ body {
     padding: .5rem;
     background-color: rgb(50, 2, 95);
     color: greenyellow;
+    position: relative;
 }
 
 .movies-container .movie .overview-container {
     width: 100%;
     position: absolute;
     z-index: 2;
-    background-color: #FFF;
+    background-color: #ccc;
     padding: 1.5rem .8rem;
     bottom: -100%;
     transition: all .4s;
